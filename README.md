@@ -13,7 +13,7 @@ terraform plan
 terraform apply
 ```
 
-State is local and gitignored for now.
+State is in the `oskarrosen-terraform` S3 bucket (`eu-north-1`) with native S3 locking; needs AWS credentials.
 
 ## What it manages
 
