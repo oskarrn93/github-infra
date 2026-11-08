@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "oskarrn93-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "oskarrn93/claude-plugins"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "git@oskarrn93-plugins": true
+  }
+}
