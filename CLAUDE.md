@@ -9,7 +9,11 @@ Small Terraform root module (`.terraform-version` pins the CLI; `versions.tf` re
 ## Commands
 
 ```sh
-direnv allow   # one-off; .envrc loads credentials
+# one-off setup
+brew install direnv 1password-cli gh
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc   # then restart the shell
+# 1Password app: Settings > Developer > "Integrate with 1Password CLI"
+direnv allow   # .envrc loads credentials
 terraform init
 terraform fmt -check
 terraform validate
