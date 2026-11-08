@@ -9,15 +9,20 @@ Small Terraform root module (`.terraform-version` pins the CLI; `versions.tf` re
 ## Commands
 
 ```sh
-export GITHUB_TOKEN=$(gh auth token)   # needs repo admin on target repos
-export TF_VAR_github_app_client_id=<client id, Iv...>
-export TF_VAR_github_app_private_key="$(cat path/to/app.private-key.pem)"
+# one-off setup
+brew install direnv gh
+brew install --cask 1password-cli
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc   # then restart the shell
+# 1Password app: Settings > Developer > "Integrate with 1Password CLI"
+direnv allow   # .envrc loads credentials
 terraform init
 terraform fmt -check
 terraform validate
 terraform plan
 terraform apply
 ```
+
+`.envrc` exports `GITHUB_TOKEN` (from `gh auth token`; needs repo admin on target repos) and reads the App client ID and private key from the 1Password `github-infra` vault via `op read`. It needs `direnv`, the 1Password CLI, and `claude` launched from this directory. `Bash(op:*)` is denied for Claude.
 
 There are no tests. State lives in S3 (`oskarrosen-terraform`, `eu-north-1`, native `use_lockfile` locking), so AWS credentials are required even for `plan`.
 
