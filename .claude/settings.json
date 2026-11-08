@@ -9,5 +9,35 @@
   },
   "enabledPlugins": {
     "git@oskarrn93-plugins": true
+  },
+  "permissions": {
+    "deny": [
+      "Read(./**/*.pem)",
+      "Edit(./**/*.pem)",
+      "Write(./**/*.pem)",
+      "Read(./**/*.tfstate*)",
+      "Read(./**/*.tfvars)",
+      "Edit(./**/*.tfvars)",
+      "Write(./**/*.tfvars)",
+      "Read(./**/.env*)",
+      "Edit(./**/.env*)",
+      "Write(./**/.env*)",
+      "Bash(terraform apply:*)",
+      "Bash(terraform show:*)",
+      "Bash(terraform state pull:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path'); case \"$f\" in *.tf) terraform fmt \"$f\" >/dev/null ;; esac"
+          }
+        ]
+      }
+    ]
   }
 }
