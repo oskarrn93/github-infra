@@ -19,12 +19,16 @@
       "Read(./**/*.tfvars)",
       "Edit(./**/*.tfvars)",
       "Write(./**/*.tfvars)",
-      "Read(./**/.env*)",
-      "Edit(./**/.env*)",
-      "Write(./**/.env*)",
+      "Read(./**/.env)",
+      "Edit(./**/.env)",
+      "Write(./**/.env)",
+      "Read(./**/.env.*)",
+      "Edit(./**/.env.*)",
+      "Write(./**/.env.*)",
       "Bash(terraform apply:*)",
       "Bash(terraform show:*)",
-      "Bash(terraform state pull:*)"
+      "Bash(terraform state pull:*)",
+      "Bash(op:*)"
     ]
   },
   "hooks": {
