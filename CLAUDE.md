@@ -10,7 +10,8 @@ Small Terraform root module (`.terraform-version` pins the CLI; `versions.tf` re
 
 ```sh
 # one-off setup
-brew install direnv 1password-cli gh
+brew install direnv gh
+brew install --cask 1password-cli
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc   # then restart the shell
 # 1Password app: Settings > Developer > "Integrate with 1Password CLI"
 direnv allow   # .envrc loads credentials
