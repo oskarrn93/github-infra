@@ -1,5 +1,5 @@
-variable "github_app_id" {
-  description = "ID of the GitHub App that workflows use to mint tokens"
+variable "github_app_client_id" {
+  description = "Client ID (Iv...) of the GitHub App that workflows use to mint tokens"
   type        = string
 }
 
