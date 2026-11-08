@@ -3,3 +3,7 @@
 *.tfstate.*
 *.tfvars
 crash.log
+*.pem
+*.private-key.pem
+.env
+.env.*
