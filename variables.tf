@@ -12,5 +12,5 @@ variable "github_app_private_key" {
 variable "app_repositories" {
   description = "Repositories that get the App credentials as Actions secrets"
   type        = set(string)
-  default     = ["iptv-client", "github-actions", "claude-plugins"]
+  default     = ["iptv-client", "github-actions", "claude-plugins", "calendar-v2"]
 }
