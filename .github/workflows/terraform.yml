@@ -10,4 +10,4 @@ permissions:
 
 jobs:
   validate:
-    uses: oskarrn93/github-actions/.github/workflows/terraform.yml@25ebbfc2f12e80e79d882094c04f605b9fe05e93 # v1
+    uses: oskarrn93/github-actions/.github/workflows/terraform.yml@da698a589fd694fa38175bc7af7404b4a509faab # v1
